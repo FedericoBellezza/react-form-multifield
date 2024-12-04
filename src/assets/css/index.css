@@ -1,0 +1,15 @@
+.card-title {
+  max-width: 50%;
+}
+
+.default-card {
+  height: 100px;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+  align-items: center;
+  overflow: auto;
+  border: 0.1px solid black;
+
+  border-radius: 10px;
+}
