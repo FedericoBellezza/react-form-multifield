@@ -13,3 +13,8 @@
 
   border-radius: 10px;
 }
+
+.textarea {
+  height: 100px;
+  resize: none;
+}

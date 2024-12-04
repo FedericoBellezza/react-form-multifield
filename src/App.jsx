@@ -5,12 +5,10 @@ function App() {
   const [titles, setTitles] = useState([
     {
       title: "Titolo 1",
-    },
-    {
-      title: "Titolo 2",
-    },
-    {
-      title: "Titolo 3",
+      img: "",
+      content: "",
+      category: "",
+      isPublic: "true",
     },
   ]);
   const [inputValue, setInputValue] = useState("");
@@ -51,28 +49,52 @@ function App() {
     <>
       <div className="container">
         <Header />
-        <form onSubmit={handleFormSubmit} className="input-group mt-5 ">
-          <input
-            onChange={handleInputChange}
-            type="text"
-            className="form-control"
-            value={inputValue}
-            placeholder="Aggiungi il titolo di un post"
-          />
-          <input
-            onChange={handleInputChange}
-            type="text"
-            className="form-control"
-            value={inputValue}
-            placeholder="Aggiungi il titolo di un post"
-          />
-          <input
-            onChange={handleInputChange}
-            type="text"
-            className="form-control"
-            value={inputValue}
-            placeholder="Aggiungi il titolo di un post"
-          />
+
+        <form onSubmit={handleFormSubmit} className="row g-3 input-group mt-5 ">
+          {/* Titolo */}
+          <div className="col-6">
+            <input
+              onChange={handleInputChange}
+              type="text"
+              className="form-control"
+              value={inputValue}
+              placeholder="Titolo"
+            />
+          </div>
+          {/* Immagine */}
+          <div className="col-6">
+            <input
+              onChange={handleInputChange}
+              type="select"
+              className="form-control"
+              value={inputValue}
+              placeholder="Immagine"
+            />
+          </div>
+          {/* Categoria */}
+          <div className="col-6">
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Categoria</option>
+              <option>Cat 1</option>
+              <option>Cat 2</option>
+              <option>Cat 3</option>
+            </select>
+          </div>
+          {/* Pubblico */}
+          <div className="col-6">
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Pubblico</option>
+              <option>Privato</option>
+            </select>
+          </div>
+          <div className="col-12">
+            <textarea
+              onChange={handleInputChange}
+              className="form-control textarea"
+              value={inputValue}
+              placeholder="Descrizione"
+            />
+          </div>
           <button className="btn btn-outline-secondary">Aggiungi</button>
         </form>
         <hr />
