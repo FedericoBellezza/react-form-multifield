@@ -82,6 +82,9 @@ function App() {
     ];
     setTitles(newTitles);
     console.log(newTitles);
+    setTitle("");
+    setImg("");
+    setContent("");
   };
   return (
     <>
@@ -162,6 +165,7 @@ function App() {
         <div className="row row-cols-3 g-3 mb-5 ">
           {/* Stampo una card per ogni elemento dell'array "titles" dinamicamente */}
           {titles.map((element) => {
+            if (element.isPublic === "false") return;
             return (
               <>
                 <div key={element} className="col">
